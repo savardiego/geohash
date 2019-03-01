@@ -1,5 +1,8 @@
 package geohash
 
+// Base32Encoding with the Geohash alphabet.
+var base32encoding = newEncoding("0123456789bcdefghjkmnpqrstuvwxyz")
+
 // encoding encapsulates an encoding defined by a given base32 alphabet.
 type encoding struct {
 	encode string
@@ -39,6 +42,3 @@ func (e *encoding) Encode(x uint64) string {
 	}
 	return string(b[:])
 }
-
-// Base32Encoding with the Geohash alphabet.
-var base32encoding = newEncoding("0123456789bcdefghjkmnpqrstuvwxyz")
